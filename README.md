@@ -9,7 +9,7 @@ Here are two datasets we used in our paper. After downloaded the datasets, you c
 - [Home Credit Default Risk](https://www.kaggle.com/c/home-credit-default-risk/data)
 - [Lending Club](https://www.kaggle.com/wordsforthewise/lending-club?select=accepted_2007_to_2018Q4.csv.gz)
 
-There is a small dataset `sample` included in the folder `data/`, which can be used to test the correctness of the code.
+There is a small dataset `sample/lending_club_sample.csv` included in the folder `data/`, which can be used to test the correctness of the code.
 
 ## Usage
 
