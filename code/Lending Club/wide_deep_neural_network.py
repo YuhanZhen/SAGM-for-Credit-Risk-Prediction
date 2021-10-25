@@ -29,9 +29,7 @@ parser.add_argument('--EmbeddingSize', type=int, default=5, help='Embedding size
 parser.add_argument('--lr', type=float, default=0.01, help='learning rate')
 parser.add_argument('--l2', type=float, default=0, help='learning rate decay rate')
 parser.add_argument('--batchSize', type=int, default=500, help='input batch size')
-parser.add_argument('--lambda_', type=float, default=0.5,
-                    help='the parameter for multitasks learning (classification)')
-parser.add_argument('--alpha_', type=float, default=0.5, help='the parameter for multitasks learning (input reconstruction)')
+
 opt, unknown = parser.parse_known_args()
 
 
@@ -198,8 +196,7 @@ def train_deep_wide(train_data, test_data, columns_value_selected, columns_embed
     criterion_1 = nn.CrossEntropyLoss()
     # criterion_1 = torch.nn.BCELoss(size_average=True)
     # criterion_2 = nn.MSELoss()
-    lam = opt.lambda_
-    alp = opt.alpha_
+
     val_auc_best = 0
     count = 0
     for epoch in range(opt.epoch):
