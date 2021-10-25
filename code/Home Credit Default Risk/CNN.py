@@ -30,9 +30,6 @@ parser.add_argument('--kernel_sizes', type=list, default=[2, 3, 5, 10, 15, 25, 4
 parser.add_argument('--lr', type=float, default=0.001, help='learning rate')
 parser.add_argument('--l2', type=float, default=0, help='learning rate decay rate')
 parser.add_argument('--batchSize', type=int, default=500, help='input batch size')
-parser.add_argument('--lambda_', type=float, default=0.5,
-                    help='the parameter for multitasks learning (classification and encoder)')
-parser.add_argument('--alpha_', type=float, default=0.01, help='the parameter of embedding F-norm')
 
 opt, unknown = parser.parse_known_args()
 
