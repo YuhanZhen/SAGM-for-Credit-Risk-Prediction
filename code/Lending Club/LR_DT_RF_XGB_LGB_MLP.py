@@ -28,11 +28,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--path', default='../../data/', help='the folder to save the training and test raw data')
+parser.add_argument('--path', default='../../data/', help='the folder to save the raw data')
 parser.add_argument('--sample', type=bool, default=True, help='whether to use sample data')
 parser.add_argument('--SAGNN_feature', type=bool, default=False, help='whether to use SAGNN intermediate vector as auxiliary '
                                                                'feature for model (Randome Forest, XGBoost, LightGBM) training')
-parser.add_argument('--valid_portion', type=float, default=0.9, help='the portion of training data')
+parser.add_argument('--split_portion', type=float, default=0.9, help='the portion of training data')
 parser.add_argument('--models', type=str, default='LR', choices=['LR', 'DT', 'RF', 'XGB', 'LGB', 'MLP'],
                     help='choose to use what kinds of models')
 
@@ -393,8 +393,8 @@ def mlp(data_train, data_test):
 
 def main():
     accepted_data = data_load(sample=opt.sample)
-    data_train, data_test = data_preprocessing(accepted_data, ratio_train=opt.valid_portion)
-    data_train_mlp, data_test_mlp = data_preprocessing_mlp(accepted_data, ratio_train=opt.valid_portion)
+    data_train, data_test = data_preprocessing(accepted_data, ratio_train=opt.split_portion)
+    data_train_mlp, data_test_mlp = data_preprocessing_mlp(accepted_data, ratio_train=opt.split_portion)
     if opt.SAGNN_feature:
         feature_train, feature_test = feature_load()
         data_train, data_test = feature_combine(data_train, data_test, feature_train, feature_test)
