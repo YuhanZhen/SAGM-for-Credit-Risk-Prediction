@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--path', default='../../data/',
-                    help='the folder to save the training and test raw data')
+                    help='the folder to save the raw data')
 parser.add_argument('--sample', type=bool, default=True, help='whether to use sample data')
 parser.add_argument('--split_portion', type=float, default=0.9, help='the portion of training data')
 parser.add_argument('--optimizer', default=optim.Adam, help='optimizer for training')
