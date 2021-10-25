@@ -19,10 +19,10 @@ import pickle
 warnings.filterwarnings('ignore')
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--path', default='../../data/', help='the folder to save the training and test raw data')
+parser.add_argument('--path', default='../../data/', help='the folder to save the raw data')
 parser.add_argument('--sample', type=bool, default=True, help='whether to use sample data')
 parser.add_argument('--cluster_theta', type=int, default=10, help='the parameter to control graph construction')
-parser.add_argument('--valid_portion', type=float, default=0.9, help='the portion of training data')
+parser.add_argument('--split_portion', type=float, default=0.9, help='the portion of training data')
 parser.add_argument('--optimizer', default=optim.Adam, help='optimizer for training')
 parser.add_argument('--epoch', type=int, default=200, help='the number of epochs to train for')
 parser.add_argument('--step_size', type=float, default=50, help='the interval epoch to decay learning rate')
@@ -402,7 +402,7 @@ def main():
     accepted_data = data_load(sample=opt.sample)
     data_all, columns_value, columns_embed, bag_size = data_preprocessing(accepted_data)
     selected_attributes = cluster_analysis_uniq(data_all, opt.cluster_theta)
-    train_cluster, test_cluster, train_df, test_df = data_cluster(data_all, selected_attributes, ratio_train=opt.valid_portion)
+    train_cluster, test_cluster, train_df, test_df = data_cluster(data_all, selected_attributes, ratio_train=opt.split_portion)
     val_best = training_model_classification(train_df, test_df, train_cluster, test_cluster, columns_value,
                                              columns_embed, bag_size, f)
 
