@@ -2,9 +2,9 @@
 
 ## Paper data and code
 
-This is the code for the PAKDD 2022 Paper. [SAGNN: Self-attention Graph Neural Networkwith Multi-task Learning for Credit RiskPrediction](). We have implemented our methods in **Pytorch**.
+This is the code for the PAKDD 2022 Paper. [SAGNN: Self-attention Graph Neural Network with Multi-task Learning for Credit RiskPrediction](). We have implemented our methods in **Pytorch**.
 
-Here are two datasets we used in our paper. After downloaded the datasets, you can put them in the folder `data/:`
+Here are two datasets we used in our paper. After downloading the datasets, you can put them in the folder `data/:`
 
 - [Home Credit Default Risk](https://www.kaggle.com/c/home-credit-default-risk/data)
 - [Lending Club](https://www.kaggle.com/wordsforthewise/lending-club?select=accepted_2007_to_2018Q4.csv.gz)
@@ -17,7 +17,7 @@ You can run the file `SAGNN_lending_club.py` to train the model.
 
 For example: `python SAGNN_lending_club.py --sample=True`
 
-You can also change other parameters accroding to the usage:
+You can also change other parameters according to the usage:
 
 ```
 usage: SAGNN_lending_club.py [-h] [--path PATH] [--sample SAMPLE] [--cluster_theta CLUSTER_THETA]
@@ -61,11 +61,13 @@ optional arguments:
 - Python 3.6
 - Pytorch 1.1.0
 
-All the depedent packages can be found on `requirements.txt`, you can use pip wheel to install these packages: `pip install -r requirements.txt -v`
+All the dependent packages can be found on `requirements.txt`, you can use pip wheel to install these packages: `pip install -r requirements.txt -v`
 
 ## Citation
 
 Please cite our paper if you use the code:
 
 
+## License
 
+MIT
