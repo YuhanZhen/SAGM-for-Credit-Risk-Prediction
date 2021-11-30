@@ -100,10 +100,10 @@ class CLASS_CNN(nn.Module):
         x = self.dropout(x)
         concat = torch.cat((x, value_batch), 1)
 
-        output = self.layer_dropout(F.relu(self.concat_layer_1(concat)))
-        output = self.layer_dropout(F.relu(self.concat_layer_2(output)))
-        output = self.layer_dropout(F.relu(self.concat_layer_3(output)))
-        output = self.layer_dropout(F.relu(self.concat_layer_4(output)))
+        output = F.relu(self.layer_dropout(F.relu(self.concat_layer_1(concat))))
+        output = F.relu(self.layer_dropout(F.relu(self.concat_layer_2(output))))
+        output = F.relu(self.layer_dropout(F.relu(self.concat_layer_3(output))))
+        output = F.relu(self.layer_dropout(F.relu(self.concat_layer_4(output))))
         self.output = F.relu(self.concat_layer_5(output))
         return self.output
 
