@@ -21,6 +21,8 @@ import random
 from data_preprocessing import data_loaded, feature_engineering
 import copy
 import pickle
+from imblearn.over_sampling import SMOTE
+
 
 warnings.filterwarnings('ignore')
 
