@@ -2,7 +2,7 @@
 
 ## Paper data and code
 
-This is the code for the PAKDD 2022 Paper. [Self-attention Graph Neural Network with Multi-task Learning for Credit RiskPrediction](). We have implemented our methods in **Pytorch**.
+This is the code for the WISE 2022 Paper. [Self-attention Graph Neural Network with Multi-task Learning for Credit RiskPrediction](). We have implemented our methods in **Pytorch**.
 
 ![SAGNN](SAGNN.png)
 
